@@ -7,6 +7,7 @@ You need to download the package dual_panda_gazebo for using this package (where
 
 
 # How to setup MoveIt!
+How this package was build:
 * Follow MoveIt! configuration setup
 * Configure controllers (see moveit_controllers.yaml and ros_controllers.yaml)
-* Add moveit_planning_execution.launch (meta file for launching everything) and panda_dual_control.launch (launch controllers)
+* Write moveit_planning_execution.launch (meta file for launching everything) and panda_dual_control.launch (launch controllers). Uncommented line in gazebo.launch to avoid launching the controllers twice.
