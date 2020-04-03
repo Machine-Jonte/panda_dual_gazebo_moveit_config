@@ -1,0 +1,241 @@
+# MoveIt-specific simulation settings
+moveit_sim_hw_interface:
+  joint_model_group: controllers_initial_group_
+  joint_model_group_pose: controllers_initial_pose_
+# Settings for ros_control control loop
+generic_hw_control_loop:
+  loop_hz: 300
+  cycle_time_error_threshold: 0.01
+
+# Settings for ros_control hardware interface
+hardware_interface:
+  joints:
+    - panda_1_joint1
+    - panda_1_joint2
+    - panda_1_joint3
+    - panda_1_joint4
+    - panda_1_joint5
+    - panda_1_joint6
+    - panda_1_joint7
+    - panda_1_finger_joint1
+    - panda_1_finger_joint2
+    - panda_2_joint1
+    - panda_2_joint2
+    - panda_2_joint3
+    - panda_2_joint4
+    - panda_2_joint5
+    - panda_2_joint6
+    - panda_2_joint7
+    - panda_2_finger_joint1
+    - panda_2_finger_joint2
+  # sim_control_mode: 1  # 0: position, 1: velocity
+# Publish all joint states
+# Creates the /joint_states topic necessary in ROS
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+# This is another probably better controller
+
+panda_1_arm_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+        - panda_1_joint1
+        - panda_1_joint2
+        - panda_1_joint3
+        - panda_1_joint4
+        - panda_1_joint5
+        - panda_1_joint6
+        - panda_1_joint7
+
+    gains:
+        # panda_1_joint1: { p: 12000, d: 50, i: 0.0, i_clamp: 10000 }
+        # panda_1_joint2: { p: 30000, d: 100, i: 0.02, i_clamp: 10000 }
+        # panda_1_joint3: { p: 18000, d: 50, i: 0.01, i_clamp: 1 }
+        # panda_1_joint4: { p: 18000, d: 70, i: 0.01, i_clamp: 10000 }
+        # panda_1_joint5: { p: 12000, d: 70, i: 0.01, i_clamp: 1 }
+        # panda_1_joint6: { p: 7000, d: 50, i: 0.01, i_clamp: 1 }
+        # panda_1_joint7: { p: 2000, d: 20, i: 0.0, i_clamp: 1 }
+        panda_1_joint1: {p: 1000.0, i: 100.0, d: 1.0}
+        panda_1_joint2: {p: 6000, i: 1000.0, d: 1.0}
+        panda_1_joint3: {p: 10000.0, i: 1000.0, d: 1.0}
+        panda_1_joint4: {p: 20000, i: 100, d: 0.5}
+        panda_1_joint5: {p: 1000.0, i: 100.0, d: 2.0}
+        panda_1_joint6: {p: 1000.0, i: 200.0, d: 2.0}
+        panda_1_joint7: {p: 500.0, i: 200.0, d: 2.0}
+        # panda_1_finger_joint1: {p: 100, i: 0, d: 50}
+        # panda_1_finger_joint2: {p: 100, i: 0, d: 50}
+
+    constraints:
+        goal_time: 2.0
+
+    state_publish_rate: 25
+
+panda_1_hand_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+        - panda_1_finger_joint1
+        - panda_1_finger_joint2
+
+    gains:
+        panda_1_finger_joint1: { p: 5, d: 3.0, i: 0.1, i_clamp: 1 }
+        panda_1_finger_joint2: { p: 5, d: 1.0, i: 0.1, i_clamp: 1 }
+
+    state_publish_rate: 25
+
+panda_2_arm_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+        - panda_2_joint1
+        - panda_2_joint2
+        - panda_2_joint3
+        - panda_2_joint4
+        - panda_2_joint5
+        - panda_2_joint6
+        - panda_2_joint7
+
+    gains:
+        # panda_2_joint1: { p: 12000, d: 50, i: 0.0, i_clamp: 10000 }
+        # panda_2_joint2: { p: 30000, d: 100, i: 0.02, i_clamp: 10000 }
+        # panda_2_joint3: { p: 18000, d: 50, i: 0.01, i_clamp: 1 }
+        # panda_2_joint4: { p: 18000, d: 70, i: 0.01, i_clamp: 10000 }
+        # panda_2_joint5: { p: 12000, d: 70, i: 0.01, i_clamp: 1 }
+        # panda_2_joint6: { p: 7000, d: 50, i: 0.01, i_clamp: 1 }
+        # panda_2_joint7: { p: 2000, d: 20, i: 0.0, i_clamp: 1 }
+        panda_2_joint1: {p: 1000.0, i: 100.0, d: 1.0}
+        panda_2_joint2: {p: 6000, i: 1000.0, d: 1.0}
+        panda_2_joint3: {p: 10000.0, i: 1000.0, d: 1.0}
+        panda_2_joint4: {p: 20000, i: 100, d: 0.5}
+        panda_2_joint5: {p: 1000.0, i: 100.0, d: 2.0}
+        panda_2_joint6: {p: 1000.0, i: 200.0, d: 2.0}
+        panda_2_joint7: {p: 500.0, i: 200.0, d: 2.0}
+        # panda_2_finger_joint1: {p: 100, i: 0, d: 50}
+        # panda_2_finger_joint2: {p: 100, i: 0, d: 50}
+
+    constraints:
+        goal_time: 2.0
+
+    state_publish_rate: 25
+
+panda_2_hand_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+        - panda_2_finger_joint1
+        - panda_2_finger_joint2
+
+    gains:
+        panda_2_finger_joint1: { p: 5, d: 3.0, i: 0.1, i_clamp: 1 }
+        panda_2_finger_joint2: { p: 5, d: 1.0, i: 0.1, i_clamp: 1 }
+
+    state_publish_rate: 25
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# DIFFERENT CONTROLLERS
+#     panda1_position_controller:
+#   type: position_controllers/JointPositionController
+#   joints:
+#     - panda_1_joint1
+#     - panda_1_joint2
+#     - panda_1_joint3
+#     - panda_1_joint4
+#     - panda_1_joint5
+#     - panda_1_joint6
+#     - panda_1_joint7
+#   gains:
+#     panda_1_joint1:
+#       p: 100
+#       d: 1
+#       i: 1
+#       i_clamp: 1
+#     panda_1_joint2:
+#       p: 100
+#       d: 1
+#       i: 1
+#       i_clamp: 1
+#     panda_1_joint3:
+#       p: 100
+#       d: 1
+#       i: 1
+#       i_clamp: 1
+#     panda_1_joint4:
+#       p: 100
+#       d: 1
+#       i: 1
+#       i_clamp: 1
+#     panda_1_joint5:
+#       p: 100
+#       d: 1
+#       i: 1
+#       i_clamp: 1
+#     panda_1_joint6:
+#       p: 100
+#       d: 1
+#       i: 1
+#       i_clamp: 1
+#     panda_1_joint7:
+#       p: 100
+#       d: 1
+#       i: 1
+#       i_clamp: 1
+# panda2_position_controller:
+#   type: position_controllers/JointPositionController
+#   joints:
+#     - panda_2_joint1
+#     - panda_2_joint2
+#     - panda_2_joint3
+#     - panda_2_joint4
+#     - panda_2_joint5
+#     - panda_2_joint6
+#     - panda_2_joint7
+#   gains:
+#     panda_2_joint1:
+#       p: 100
+#       d: 1
+#       i: 1
+#       i_clamp: 1
+#     panda_2_joint2:
+#       p: 100
+#       d: 1
+#       i: 1
+#       i_clamp: 1
+#     panda_2_joint3:
+#       p: 100
+#       d: 1
+#       i: 1
+#       i_clamp: 1
+#     panda_2_joint4:
+#       p: 100
+#       d: 1
+#       i: 1
+#       i_clamp: 1
+#     panda_2_joint5:
+#       p: 100
+#       d: 1
+#       i: 1
+#       i_clamp: 1
+#     panda_2_joint6:
+#       p: 100
+#       d: 1
+#       i: 1
+#       i_clamp: 1
+#     panda_2_joint7:
+#       p: 100
+#       d: 1
+#       i: 1
+#       i_clamp: 1
+

@@ -1,0 +1,7 @@
+panda_X_joint1: {p: 1000.0, i: 100.0, d: 1.0}
+panda_X_joint2: {p: 6000, i: 1000.0, d: 1.0}
+panda_X_joint3: {p: 10000.0, i: 1000.0, d: 1.0}
+panda_X_joint4: {p: 20000, i: 100, d: 0.5}
+panda_X_joint5: {p: 1000.0, i: 100.0, d: 2.0}
+panda_X_joint6: {p: 1000.0, i: 200.0, d: 2.0}
+panda_X_joint7: {p: 500.0, i: 200.0, d: 2.0}
