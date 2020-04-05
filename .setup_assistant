@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: panda_dual_gazebo
+    relative_path: robots/dual_panda.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/panda.srdf
+  CONFIG:
+    author_name: Jonathan Oesterberg
+    author_email: josterb@kth.se
+    generated_timestamp: 1586081224
