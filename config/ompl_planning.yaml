@@ -177,7 +177,7 @@ panda2:
   projection_evaluator: joints(panda_2_joint1,panda_2_joint2)
   longest_valid_segment_fraction: 0.005
 hand1:
-  default_planner_config: None
+  default_planner_config: ""
   planner_configs:
     - SBL
     - EST
@@ -203,7 +203,7 @@ hand1:
     - SPARS
     - SPARStwo
 hand2:
-  default_planner_config: None
+  default_planner_config: ""
   planner_configs:
     - SBL
     - EST

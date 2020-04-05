@@ -11,3 +11,4 @@ How this package was build:
 * Follow MoveIt! configuration setup
 * Configure controllers (see moveit_controllers.yaml and ros_controllers.yaml)
 * Write moveit_planning_execution.launch (meta file for launching everything) and panda_dual_control.launch (launch controllers). Uncommented line in gazebo.launch to avoid launching the controllers twice.
+* DON'T RUN JOINT STATE PUBLISHER WHEN RUNNING GAZEBO. It will interfere.

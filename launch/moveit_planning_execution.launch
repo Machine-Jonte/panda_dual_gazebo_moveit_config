@@ -30,7 +30,9 @@
   <!-- Generate/Load robot description file -->
   <include file="$(find panda_dual_gazebo_moveit_config)/launch/panda_dual_control.launch"/>
 
-
+<!-- '  <include file="$(find franka_gripper)/launch/franka_gripper.launch">
+    <arg name="robot_ip" value="<fci-ip>"/>
+  </include>' -->
 
   <!-- The planning and execution components of MoveIt! configured to 
   publish the current configuration of the robot (simulated or real) 

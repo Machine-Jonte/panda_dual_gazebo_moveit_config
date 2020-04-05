@@ -24,18 +24,24 @@ controller_list:
       - panda_2_joint6
       - panda_2_joint7
   - name: panda_1_hand_controller
-    action_ns: gripper_action
-    type: GripperCommand
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
     default: True
-    parallel: True
+    # action_ns: gripper_action
+    # type: GripperCommand
+    # default: True
+    # parallel: True
     joints:
         - panda_1_finger_joint1
         - panda_1_finger_joint2
   - name: panda_2_hand_controller
-    action_ns: gripper_action
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
     default: True
-    parallel: True
-    type: GripperCommand
+    # action_ns: gripper_action
+    # default: True
+    # type: GripperCommand
+    # parallel: True
     joints:
         - panda_2_finger_joint1
         - panda_2_finger_joint2

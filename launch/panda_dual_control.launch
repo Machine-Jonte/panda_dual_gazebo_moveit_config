@@ -10,16 +10,17 @@
   <!-- load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
     output="screen" args=" /joint_state_controller 
-                                            panda_1_arm_controller 
-                                            panda_1_hand_controller 
-                                            panda_2_arm_controller 
-                                            panda_2_hand_controller"/>
+                                  panda_1_arm_controller 
+                                  panda_2_arm_controller 
+                                  panda_1_hand_controller 
+                                  panda_2_hand_controller"
+  />
 
 
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+  <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="/use_gui" value="false"/>
     <rosparam param="/source_list">[/joint_states]</rosparam>
-  </node>
+  </node> -->
   <!-- convert joint states to TF transforms for rviz, etc -->
   <node name="state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
     respawn="false" output="screen">
