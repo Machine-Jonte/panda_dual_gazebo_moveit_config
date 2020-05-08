@@ -25,6 +25,24 @@
         <joint name="panda_2_finger_joint2" />
         <joint name="panda_2_hand_joint" />
     </group>
+    <group name="dual">
+        <joint name="panda_1_joint1" />
+        <joint name="panda_1_joint2" />
+        <joint name="panda_1_joint3" />
+        <joint name="panda_1_joint4" />
+        <joint name="panda_1_joint5" />
+        <joint name="panda_1_joint6" />
+        <joint name="panda_1_joint7" />
+        <joint name="panda_1_joint8" />
+        <joint name="panda_2_joint1" />
+        <joint name="panda_2_joint2" />
+        <joint name="panda_2_joint3" />
+        <joint name="panda_2_joint4" />
+        <joint name="panda_2_joint5" />
+        <joint name="panda_2_joint6" />
+        <joint name="panda_2_joint7" />
+        <joint name="panda_2_joint8" />
+    </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="random_pose" group="panda1">
         <joint name="panda_1_joint1" value="0.6542" />
@@ -51,9 +69,25 @@
         <joint name="panda_2_finger_joint1" value="0" />
         <joint name="panda_2_finger_joint2" value="0" />
     </group_state>
+    <group_state name="test" group="dual">
+        <joint name="panda_1_joint1" value="-0.016" />
+        <joint name="panda_1_joint2" value="0.544" />
+        <joint name="panda_1_joint3" value="0.6883" />
+        <joint name="panda_1_joint4" value="-1.944" />
+        <joint name="panda_1_joint5" value="0.1312" />
+        <joint name="panda_1_joint6" value="3.0027" />
+        <joint name="panda_1_joint7" value="0" />
+        <joint name="panda_2_joint1" value="0" />
+        <joint name="panda_2_joint2" value="0" />
+        <joint name="panda_2_joint3" value="-1.2646" />
+        <joint name="panda_2_joint4" value="-1.9274" />
+        <joint name="panda_2_joint5" value="-1.5847" />
+        <joint name="panda_2_joint6" value="1.7529" />
+        <joint name="panda_2_joint7" value="2.5772" />
+    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="hand1" parent_link="panda_1_link8" group="hand1" parent_group="panda1" />
-    <end_effector name="hand2" parent_link="panda_2_link8" group="hand2" parent_group="panda2" />
+    <end_effector name="hand1" parent_link="panda_1_link8" group="hand1" parent_group="dual" />
+    <end_effector name="hand2" parent_link="panda_2_link8" group="hand2" parent_group="dual" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virutal_link" type="fixed" parent_frame="world" child_link="base" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->

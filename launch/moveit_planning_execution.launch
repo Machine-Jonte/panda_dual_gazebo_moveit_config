@@ -8,7 +8,9 @@
   <!--  - if sim=false, a robot_ip argument is required -->
   <arg name="sim" default="true" />
   <arg name="robot_ip" unless="$(arg sim)" />
+  <arg name="pipeline" default="chomp" />
 
+  <rosparam command="load" file="$(find panda_dual_gazebo_moveit_config)/config/default.yaml"/>
     <!-- run the robot simulator and action interface nodes -->
   <group if="$(arg sim)">
     <include file="$(find panda_dual_gazebo_moveit_config)/launch/gazebo.launch" />
@@ -41,6 +43,7 @@
     <arg name="publish_monitored_planning_scene" value="true" />
     <arg name="allow_trajectory_execution" value="true"/>
     <arg name="info" value="true"/>
+    <arg name="pipeline" value="$(arg pipeline)" />
   </include>
 
   <!-- The visualization component of MoveIt! -->
