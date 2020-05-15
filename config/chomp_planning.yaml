@@ -16,4 +16,4 @@ collision_threshold: 0.07
 use_stochastic_descent: true
 enable_failure_recovery: true
 max_recovery_attempts: 5
-trajectory_initializaiton_method: linear
+trajectory_initializaiton_method: 1

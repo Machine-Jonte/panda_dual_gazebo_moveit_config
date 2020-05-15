@@ -3,7 +3,7 @@
   <name>panda_dual_gazebo_moveit_config</name>
   <version>0.3.0</version>
   <description>
-     An automatically generated package with all the configuration and launch files for using the panda with the MoveIt! Motion Planning Framework
+     An automatically generated package with all the configuration and launch files for using the panda with the MoveIt Motion Planning Framework
   </description>
   <author email="josterb@kth.se">Jonathan Oesterberg</author>
   <maintainer email="josterb@kth.se">Jonathan Oesterberg</maintainer>

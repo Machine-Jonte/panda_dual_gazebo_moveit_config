@@ -39,3 +39,12 @@ controller_list:
       - panda_2_joint5
       - panda_2_joint6
       - panda_2_joint7
+initial:  # Define initial robot poses.
+  - group: panda1
+    pose: random_pose
+  - group: hand1
+    pose: closed
+  - group: hand2
+    pose: open
+  - group: dual
+    pose: test

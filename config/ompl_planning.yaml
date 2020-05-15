@@ -1,4 +1,10 @@
 planner_configs:
+  AnytimePathShortening:
+    type: geometric::AnytimePathShortening
+    shortcut: true  # Attempt to shortcut all new solution paths
+    hybridize: true  # Compute hybrid solution trajectories
+    max_hybrid_paths: 24  # Number of hybrid paths generated per iteration
+    num_planners: 4  # The number of default planners to use for planning
   SBL:
     type: geometric::SBL
     range: 0.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
@@ -121,8 +127,9 @@ planner_configs:
     dense_delta_fraction: 0.001  # delta fraction for interface detection. default: 0.001
     max_failures: 5000  # maximum consecutive failure limit. default: 5000
 panda1:
-  default_planner_config: None
+  default_planner_config: AnytimePathShortening
   planner_configs:
+    - AnytimePathShortening
     - SBL
     - EST
     - LBKPIECE
@@ -149,8 +156,9 @@ panda1:
   projection_evaluator: joints(panda_1_joint1,panda_1_joint2)
   longest_valid_segment_fraction: 0.005
 panda2:
-  default_planner_config: None
+  default_planner_config: AnytimePathShortening
   planner_configs:
+    - AnytimePathShortening
     - SBL
     - EST
     - LBKPIECE
@@ -179,6 +187,7 @@ panda2:
 hand1:
   default_planner_config: ""
   planner_configs:
+    - AnytimePathShortening
     - SBL
     - EST
     - LBKPIECE
@@ -205,6 +214,7 @@ hand1:
 hand2:
   default_planner_config: ""
   planner_configs:
+    - AnytimePathShortening
     - SBL
     - EST
     - LBKPIECE
@@ -229,8 +239,9 @@ hand2:
     - SPARS
     - SPARStwo
 dual:
-  default_planner_config: None
+  default_planner_config: ""
   planner_configs:
+    - AnytimePathShortening
     - SBL
     - EST
     - LBKPIECE
