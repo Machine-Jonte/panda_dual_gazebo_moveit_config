@@ -7,7 +7,7 @@ This is a moveit configuration for controlling 2 Franka Emika robots in gazebo.
 </p>
 
 ## Requierments
-You need to download the package dual_panda_gazebo for using this package (where the xacro file is). [That package is available on my github](https://github.com/Machine-Jonte/panda_dual_gazebo_moveit_config).
+You need to download the package dual_panda_gazebo for using this package (where the xacro file is). [That package is available on my github](https://github.com/Machine-Jonte/panda_dual_gazebo).
 
 ## To launch:
 Run: 
