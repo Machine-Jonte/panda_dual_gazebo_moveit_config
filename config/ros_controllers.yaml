@@ -49,13 +49,33 @@ panda_1_arm_controller:
         - panda_1_joint7
 
     gains:
-        panda_1_joint1: {p: 6000, i: 1.1, d: 10.0, i_clamp: 1}
-        panda_1_joint2: {p: 6000, i: 0.7, d: 20.0, i_clamp: 1}
-        panda_1_joint3: {p: 6000, i: 0.5, d: 20.0, i_clamp: 1}
-        panda_1_joint4: {p: 6000, i: 0.5, d: 20.0, i_clamp: 1}
-        panda_1_joint5: {p: 6000, i: 0.5, d: 20.0, i_clamp: 1}
-        panda_1_joint6: {p: 1000, i: 0.5, d: 20.0, i_clamp: 1}
-        panda_1_joint7: {p: 1000, i: 0.5, d: 20.0, i_clamp: 1}
+        # Used Controller
+        panda_1_joint1: {p: 1000.0,  i: 1.5, d: 20.0}
+        panda_1_joint2: {p: 6000,    i: 2.0, d: 10.0}
+        panda_1_joint3: {p: 10000.0, i: 2.0, d: 10.0}
+        panda_1_joint4: {p: 20000,   i: 1.0, d: 10.0}
+        panda_1_joint5: {p: 1000.0,  i: 1.0, d: 10.0}
+        panda_1_joint6: {p: 1000.0,  i: 1.0, d: 10.0}
+        panda_1_joint7: {p: 500.0,   i: 1.0, d: 10.0}
+
+        # Good Controller
+        # panda_1_joint1: {p: 6000, i: 0.5, d: 1.0}
+        # panda_1_joint2: {p: 6000, i: 0.5, d: 1.0}
+        # panda_1_joint3: {p: 6000, i: 0.5, d: 1.0}
+        # panda_1_joint4: {p: 6000, i: 0.5, d: 1.0}
+        # panda_1_joint5: {p: 6000, i: 0.5, d: 1.0}
+        # panda_1_joint6: {p: 1000, i: 0.5, d: 1.0}
+        # panda_1_joint7: {p: 1000, i: 0.5, d: 1.0}
+
+
+        # Bad controller
+        # panda_1_joint1: {p: 100.0,  i: 1.5, d: 20.0}
+        # panda_1_joint2: {p: 600,    i: 2.0, d: 10.0}
+        # panda_1_joint3: {p: 1000.0, i: 2.0, d: 10.0}
+        # panda_1_joint4: {p: 2000,   i: 1.0, d: 10.0}
+        # panda_1_joint5: {p: 100.0,  i: 1.0, d: 10.0}
+        # panda_1_joint6: {p: 100.0,  i: 1.0, d: 10.0}
+        # panda_1_joint7: {p: 50.0,   i: 1.0, d: 10.0}
 
     # constraints:
     #     goal_time: 2.0
@@ -75,13 +95,49 @@ panda_2_arm_controller:
         - panda_2_joint7
 
     gains:
-        panda_2_joint1: {p: 6000, i: 1.1, d: 10.0, i_clamp: 1}
-        panda_2_joint2: {p: 6000, i: 0.7, d: 20.0, i_clamp: 1}
-        panda_2_joint3: {p: 6000, i: 0.5, d: 20.0, i_clamp: 1}
-        panda_2_joint4: {p: 6000, i: 0.5, d: 20.0, i_clamp: 1}
-        panda_2_joint5: {p: 6000, i: 0.5, d: 20.0, i_clamp: 1}
-        panda_2_joint6: {p: 1000, i: 0.5, d: 20.0, i_clamp: 1}
-        panda_2_joint7: {p: 1000, i: 0.5, d: 20.0, i_clamp: 1}
+        # Used controller
+        panda_2_joint1: {p: 1000.0,  i: 1.5, d: 20.0}
+        panda_2_joint2: {p: 6000,    i: 2.0, d: 10.0}
+        panda_2_joint3: {p: 10000.0, i: 2.0, d: 10.0}
+        panda_2_joint4: {p: 20000,   i: 1.0, d: 10.0}
+        panda_2_joint5: {p: 1000.0,  i: 1.0, d: 10.0}
+        panda_2_joint6: {p: 1000.0,  i: 1.0, d: 10.0}
+        panda_2_joint7: {p: 500.0,   i: 1.0, d: 10.0}
+
+        # Good Controller
+        # panda_2_joint1: {p: 6000, i: 0.5, d: 1.0}
+        # panda_2_joint2: {p: 6000, i: 0.5, d: 1.0}
+        # panda_2_joint3: {p: 6000, i: 0.5, d: 1.0}
+        # panda_2_joint4: {p: 6000, i: 0.5, d: 1.0}
+        # panda_2_joint5: {p: 6000, i: 0.5, d: 1.0}
+        # panda_2_joint6: {p: 1000, i: 0.5, d: 1.0}
+        # panda_2_joint7: {p: 1000, i: 0.5, d: 1.0}
+        
+        # Bad controller
+        # panda_2_joint1: {p: 100.0,  i: 1.5, d: 20.0}
+        # panda_2_joint2: {p: 600,    i: 2.0, d: 10.0}
+        # panda_2_joint3: {p: 1000.0, i: 2.0, d: 10.0}
+        # panda_2_joint4: {p: 2000,   i: 1.0, d: 10.0}
+        # panda_2_joint5: {p: 100.0,  i: 1.0, d: 10.0}
+        # panda_2_joint6: {p: 100.0,  i: 1.0, d: 10.0}
+        # panda_2_joint7: {p: 50.0,   i: 1.0, d: 10.0}
+
+        # Different controller tests
+        # panda_2_joint1: {p: 6000, i: 0.5, d: 30.0}
+        # panda_2_joint2: {p: 6000, i: 0.5, d: 30.0}
+        # panda_2_joint3: {p: 6000, i: 0.5, d: 30.0}
+        # panda_2_joint4: {p: 6000, i: 0.5, d: 30.0}
+        # panda_2_joint5: {p: 6000, i: 0.5, d: 30.0}
+        # panda_2_joint6: {p: 1000, i: 0.5, d: 30.0}
+        # panda_2_joint7: {p: 1000, i: 0.5, d: 30.0}
+
+        # panda_2_joint1: {p: 1000.0,  i: 1.5, d: 3.0}
+        # panda_2_joint2: {p: 6000,    i: 2.0, d: 4.0}
+        # panda_2_joint3: {p: 10000.0, i: 2.0, d: 3.0}
+        # panda_2_joint4: {p: 20000,   i: 1.0, d: 2.0}
+        # panda_2_joint5: {p: 1000.0,  i: 1.0, d: 2.0}
+        # panda_2_joint6: {p: 1000.0,  i: 1.0, d: 2.0}
+        # panda_2_joint7: {p: 500.0,   i: 1.0, d: 2.0}
 
 
     # constraints:

@@ -85,6 +85,22 @@
         <joint name="panda_2_joint6" value="1.7529" />
         <joint name="panda_2_joint7" value="2.5772" />
     </group_state>
+    <group_state name="start" group="dual">
+        <joint name="panda_1_joint1" value="0" />
+        <joint name="panda_1_joint2" value="-1" />
+        <joint name="panda_1_joint3" value="0" />
+        <joint name="panda_1_joint4" value="-2.5" />
+        <joint name="panda_1_joint5" value="0" />
+        <joint name="panda_1_joint6" value="1.5" />
+        <joint name="panda_1_joint7" value="0" />
+        <joint name="panda_2_joint1" value="0" />
+        <joint name="panda_2_joint2" value="-1" />
+        <joint name="panda_2_joint3" value="0" />
+        <joint name="panda_2_joint4" value="-2.5" />
+        <joint name="panda_2_joint5" value="0" />
+        <joint name="panda_2_joint6" value="1.5" />
+        <joint name="panda_2_joint7" value="0" />
+    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="hand1" parent_link="panda_1_link8" group="hand1" parent_group="dual" />
     <end_effector name="hand2" parent_link="panda_2_link8" group="hand2" parent_group="dual" />
