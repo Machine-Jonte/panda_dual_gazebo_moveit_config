@@ -8,6 +8,10 @@ This is a moveit configuration for controlling 2 Franka Emika robots in gazebo.
 
 ## Requierments
 You need to download the package dual_panda_gazebo for using this package (where the xacro file is). [That package is available on my github](https://github.com/Machine-Jonte/panda_dual_gazebo).
+Also, you need to have ros controllers installed. Make sure you have generated the IKFast controllers for the moveit configuration. Otherwise specify the following line in kinematics.yaml
+```yaml
+kinematics_solver: kdl_kinematics_plugin/KDLKinematicsPlugin
+```
 
 ## To launch:
 Run: 
